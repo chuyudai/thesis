@@ -582,3 +582,566 @@ behaveproblemindexpercentilescor |   .0059703   .0023137     2.58   0.010     .0
 WARNING! 3047 in-sample cases have an outcome with a predicted probability that is
 less than 0. See the gologit2 help section on Warning Messages for more information.
 
+. reg hgc m_hgc f_hgc phispanic pblack psex mother_work_1978 father_work_1978 cultural_influence teen_mom
+
+      Source |       SS           df       MS      Number of obs   =     7,886
+-------------+----------------------------------   F(9, 7876)      =    254.54
+       Model |   4393.2357         9    488.1373   Prob > F        =    0.0000
+    Residual |  15103.7936     7,876  1.91769853   R-squared       =    0.2253
+-------------+----------------------------------   Adj R-squared   =    0.2244
+       Total |  19497.0293     7,885  2.47267334   Root MSE        =    1.3848
+
+------------------------------------------------------------------------------------
+               hgc | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------------+----------------------------------------------------------------
+             m_hgc |   .2030036   .0123346    16.46   0.000     .1788244    .2271828
+             f_hgc |    .125233   .0096206    13.02   0.000     .1063741     .144092
+         phispanic |   .0927281   .0445636     2.08   0.037     .0053716    .1800845
+            pblack |   .1559378   .0406942     3.83   0.000     .0761665    .2357092
+              psex |   1.008168    .620028     1.63   0.104    -.2072515    2.223587
+  mother_work_1978 |  -.0528406    .018151    -2.91   0.004    -.0884214   -.0172599
+  father_work_1978 |  -.0736326   .0249864    -2.95   0.003    -.1226126   -.0246526
+cultural_influence |   .7540066   .0550517    13.70   0.000     .6460907    .8619226
+          teen_mom |  -.2302014   .0376919    -6.11   0.000    -.3040874   -.1563153
+             _cons |   1.948883   1.240716     1.57   0.116    -.4832499    4.381015
+------------------------------------------------------------------------------------
+
+. reg hgc m_hgc f_hgc phispanic pblack psex urban_at_14 rural_at_14 farm_at_14 age_stopped_living_w_parent i.resi
+> de_parent_type mother_work_1978 father_work_1978 cultural_influence teen_mom foreign_lang_child sibling sibling
+> _school
+note: psex omitted because of collinearity.
+
+      Source |       SS           df       MS      Number of obs   =     6,643
+-------------+----------------------------------   F(18, 6624)     =    129.41
+       Model |  4292.81744        18  238.489858   Prob > F        =    0.0000
+    Residual |  12207.2476     6,624  1.84288158   R-squared       =    0.2602
+-------------+----------------------------------   Adj R-squared   =    0.2582
+       Total |   16500.065     6,642   2.4842013   Root MSE        =    1.3575
+
+---------------------------------------------------------------------------------------------
+                        hgc | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+----------------------------+----------------------------------------------------------------
+                      m_hgc |   .1796931   .0138236    13.00   0.000     .1525945    .2067917
+                      f_hgc |   .1291682   .0104293    12.39   0.000     .1087235     .149613
+                  phispanic |   .0543016   .0531132     1.02   0.307    -.0498173    .1584206
+                     pblack |   .1886521    .045753     4.12   0.000     .0989615    .2783427
+                       psex |          0  (omitted)
+                urban_at_14 |   .3746585   .3213301     1.17   0.244     -.255252    1.004569
+                rural_at_14 |   .4640434   .3233112     1.44   0.151    -.1697508    1.097838
+                 farm_at_14 |   .5515637   .3287783     1.68   0.093    -.0929477    1.196075
+age_stopped_living_w_parent |  -.0331105   .0059377    -5.58   0.000    -.0447504   -.0214706
+                            |
+         reside_parent_type |
+                         1  |   .6583464   .0579508    11.36   0.000     .5447442    .7719486
+                         2  |   .1045451   .0692624     1.51   0.131    -.0312316    .2403218
+                         3  |    .663637   .2353516     2.82   0.005     .2022721    1.125002
+                            |
+           mother_work_1978 |  -.0657054   .0196741    -3.34   0.001    -.1042729   -.0271379
+           father_work_1978 |  -.0344284   .0270609    -1.27   0.203    -.0874764    .0186196
+         cultural_influence |    .662114   .0601207    11.01   0.000      .544258      .77997
+                   teen_mom |  -.3742718   .0425155    -8.80   0.000     -.457616   -.2909277
+         foreign_lang_child |   .1016668   .0491998     2.07   0.039     .0052193    .1981143
+                    sibling |  -.0729713   .0086846    -8.40   0.000    -.0899959   -.0559467
+             sibling_school |   .1259655   .0127251     9.90   0.000     .1010203    .1509108
+                      _cons |   3.833674   .3426802    11.19   0.000      3.16191    4.505438
+---------------------------------------------------------------------------------------------
+
+. reg hgc m_hgc f_hgc phispanic pblack psex urban_at_14 rural_at_14 farm_at_14 age_stopped_living_w_parent i.resi
+> de_parent_type mother_work_1978 father_work_1978 cultural_influence teen_mom foreign_lang_child sibling sibling
+> _school afqt
+note: psex omitted because of collinearity.
+
+      Source |       SS           df       MS      Number of obs   =     6,392
+-------------+----------------------------------   F(19, 6372)     =    190.95
+       Model |  5683.05938        19  299.108388   Prob > F        =    0.0000
+    Residual |  9981.17341     6,372   1.5664114   R-squared       =    0.3628
+-------------+----------------------------------   Adj R-squared   =    0.3609
+       Total |  15664.2328     6,391  2.45098307   Root MSE        =    1.2516
+
+---------------------------------------------------------------------------------------------
+                        hgc | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+----------------------------+----------------------------------------------------------------
+                      m_hgc |     .11015   .0132449     8.32   0.000     .0841856    .1361143
+                      f_hgc |   .0646441   .0100156     6.45   0.000     .0450101     .084278
+                  phispanic |   .2540308   .0504051     5.04   0.000       .15522    .3528417
+                     pblack |   .4806827   .0439524    10.94   0.000     .3945212    .5668442
+                       psex |          0  (omitted)
+                urban_at_14 |   .1234007   .2963995     0.42   0.677    -.4576419    .7044434
+                rural_at_14 |   .1834894    .298318     0.62   0.539    -.4013144    .7682931
+                 farm_at_14 |    .139691   .3034559     0.46   0.645    -.4551846    .7345665
+age_stopped_living_w_parent |  -.0338962   .0055765    -6.08   0.000    -.0448281   -.0229643
+                            |
+         reside_parent_type |
+                         1  |   .5574114   .0545246    10.22   0.000     .4505248     .664298
+                         2  |   .1031986   .0653318     1.58   0.114    -.0248736    .2312709
+                         3  |   .5235668   .2268077     2.31   0.021     .0789473    .9681862
+                            |
+           mother_work_1978 |  -.0565562    .018488    -3.06   0.002     -.092799   -.0203135
+           father_work_1978 |  -.0064299    .025554    -0.25   0.801    -.0565244    .0436646
+         cultural_influence |   .2980486   .0578315     5.15   0.000     .1846794    .4114177
+                   teen_mom |  -.2441726   .0401598    -6.08   0.000    -.3228994   -.1654458
+         foreign_lang_child |   .0777672   .0466486     1.67   0.096    -.0136798    .1692142
+                    sibling |  -.0479744    .008187    -5.86   0.000    -.0640237   -.0319251
+             sibling_school |   .1022279   .0119981     8.52   0.000     .0787077    .1257482
+                       afqt |   .0231752   .0007179    32.28   0.000     .0217679    .0245825
+                      _cons |   3.814417   .3168015    12.04   0.000      3.19338    4.435455
+---------------------------------------------------------------------------------------------
+
+. reg afqt m_hgc f_hgc phispanic pblack psex urban_at_14 rural_at_14 farm_at_14 age_stopped_living_w_parent i.res
+> ide_parent_type mother_work_1978 father_work_1978 cultural_influence teen_mom foreign_lang_child sibling siblin
+> g_school
+note: psex omitted because of collinearity.
+
+      Source |       SS           df       MS      Number of obs   =     6,395
+-------------+----------------------------------   F(18, 6376)     =    234.13
+       Model |  2011343.66        18  111741.315   Prob > F        =    0.0000
+    Residual |  3042971.53     6,376  477.254004   R-squared       =    0.3979
+-------------+----------------------------------   Adj R-squared   =    0.3962
+       Total |   5054315.2     6,394  790.477822   Root MSE        =    21.846
+
+---------------------------------------------------------------------------------------------
+                       afqt | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+----------------------------+----------------------------------------------------------------
+                      m_hgc |   2.940159   .2281682    12.89   0.000     2.492873    3.387446
+                      f_hgc |    2.83189   .1711756    16.54   0.000     2.496329    3.167452
+                  phispanic |  -8.084198   .8736706    -9.25   0.000    -9.796886    -6.37151
+                     pblack |   -13.4425   .7483108   -17.96   0.000    -14.90945   -11.97556
+                       psex |          0  (omitted)
+                urban_at_14 |   11.19672   5.171761     2.16   0.030     1.058326     21.3351
+                rural_at_14 |   12.58164   5.204766     2.42   0.016     2.378551    22.78473
+                 farm_at_14 |   17.17305   5.292471     3.24   0.001     6.798023    27.54807
+age_stopped_living_w_parent |    .092718   .0973321     0.95   0.341    -.0980857    .2835216
+                            |
+         reside_parent_type |
+                         1  |   4.162232   .9502945     4.38   0.000     2.299335    6.025129
+                         2  |   .6622421   1.140339     0.58   0.561    -1.573206     2.89769
+                         3  |   13.33649   3.955402     3.37   0.001     5.582572    21.09041
+                            |
+           mother_work_1978 |  -.3528164   .3225933    -1.09   0.274    -.9852077    .2795749
+           father_work_1978 |  -.4180714   .4459864    -0.94   0.349    -1.292355    .4562118
+         cultural_influence |   15.07996    .990901    15.22   0.000     13.13746    17.02246
+                   teen_mom |   -5.70276   .6973095    -8.18   0.000    -7.069721   -4.335799
+         foreign_lang_child |   1.261054   .8136165     1.55   0.121    -.3339082    2.856015
+                    sibling |  -1.035547   .1423109    -7.28   0.000    -1.314524   -.7565697
+             sibling_school |   .9793078   .2090502     4.68   0.000     .5694992    1.389117
+                      _cons |  -.0064507   5.529516    -0.00   0.999    -10.84616    10.83326
+---------------------------------------------------------------------------------------------
+
+. ssc install estout
+checking estout consistency and verifying not already installed...
+installing into /Users/dcy/Library/Application Support/Stata/ado/plus/...
+installation complete.
+
+. ssc install outreg2
+checking outreg2 consistency and verifying not already installed...
+installing into /Users/dcy/Library/Application Support/Stata/ado/plus/...
+installation complete.
+
+. reg hgc m_hgc f_hgc phispanic pblack psex urban_at_14 rural_at_14 farm_at_14 age_stopped_living_w_parent i.resi
+> de_parent_type mother_work_1978 father_work_1978 cultural_influence teen_mom foreign_lang_child sibling sibling
+> _school
+note: psex omitted because of collinearity.
+
+      Source |       SS           df       MS      Number of obs   =     6,643
+-------------+----------------------------------   F(18, 6624)     =    129.41
+       Model |  4292.81744        18  238.489858   Prob > F        =    0.0000
+    Residual |  12207.2476     6,624  1.84288158   R-squared       =    0.2602
+-------------+----------------------------------   Adj R-squared   =    0.2582
+       Total |   16500.065     6,642   2.4842013   Root MSE        =    1.3575
+
+---------------------------------------------------------------------------------------------
+                        hgc | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+----------------------------+----------------------------------------------------------------
+                      m_hgc |   .1796931   .0138236    13.00   0.000     .1525945    .2067917
+                      f_hgc |   .1291682   .0104293    12.39   0.000     .1087235     .149613
+                  phispanic |   .0543016   .0531132     1.02   0.307    -.0498173    .1584206
+                     pblack |   .1886521    .045753     4.12   0.000     .0989615    .2783427
+                       psex |          0  (omitted)
+                urban_at_14 |   .3746585   .3213301     1.17   0.244     -.255252    1.004569
+                rural_at_14 |   .4640434   .3233112     1.44   0.151    -.1697508    1.097838
+                 farm_at_14 |   .5515637   .3287783     1.68   0.093    -.0929477    1.196075
+age_stopped_living_w_parent |  -.0331105   .0059377    -5.58   0.000    -.0447504   -.0214706
+                            |
+         reside_parent_type |
+                         1  |   .6583464   .0579508    11.36   0.000     .5447442    .7719486
+                         2  |   .1045451   .0692624     1.51   0.131    -.0312316    .2403218
+                         3  |    .663637   .2353516     2.82   0.005     .2022721    1.125002
+                            |
+           mother_work_1978 |  -.0657054   .0196741    -3.34   0.001    -.1042729   -.0271379
+           father_work_1978 |  -.0344284   .0270609    -1.27   0.203    -.0874764    .0186196
+         cultural_influence |    .662114   .0601207    11.01   0.000      .544258      .77997
+                   teen_mom |  -.3742718   .0425155    -8.80   0.000     -.457616   -.2909277
+         foreign_lang_child |   .1016668   .0491998     2.07   0.039     .0052193    .1981143
+                    sibling |  -.0729713   .0086846    -8.40   0.000    -.0899959   -.0559467
+             sibling_school |   .1259655   .0127251     9.90   0.000     .1010203    .1509108
+                      _cons |   3.833674   .3426802    11.19   0.000      3.16191    4.505438
+---------------------------------------------------------------------------------------------
+
+. esttab using regression_results.tex, replace ///
+option / not allowed
+r(198);
+
+.     title("Regression Results") ///
+command title is unrecognized
+r(199);
+
+.     label se star(* 0.05 ** 0.01 *** 0.001) ///
+invalid syntax
+r(198);
+
+.     compress
+  (0 bytes saved)
+
+. esttab using regression_results.tex, replace
+(file regression_results.tex not found)
+(output written to regression_results.tex)
+
+.     title("Regression Results")
+command title is unrecognized
+r(199);
+
+.     label se star(* 0.05 ** 0.01 *** 0.001)
+invalid syntax
+r(198);
+
+.     compress
+  (0 bytes saved)
+
+. reg hgc m_hgc f_hgc phispanic pblack psex urban_at_14 rural_at_14 farm_at_14 age_stopped_living_w_parent i.resi
+> de_parent_type mother_work_1978 father_work_1978 cultural_influence teen_mom foreign_lang_child sibling sibling
+> _school
+note: psex omitted because of collinearity.
+
+      Source |       SS           df       MS      Number of obs   =     6,643
+-------------+----------------------------------   F(18, 6624)     =    129.41
+       Model |  4292.81744        18  238.489858   Prob > F        =    0.0000
+    Residual |  12207.2476     6,624  1.84288158   R-squared       =    0.2602
+-------------+----------------------------------   Adj R-squared   =    0.2582
+       Total |   16500.065     6,642   2.4842013   Root MSE        =    1.3575
+
+---------------------------------------------------------------------------------------------
+                        hgc | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+----------------------------+----------------------------------------------------------------
+                      m_hgc |   .1796931   .0138236    13.00   0.000     .1525945    .2067917
+                      f_hgc |   .1291682   .0104293    12.39   0.000     .1087235     .149613
+                  phispanic |   .0543016   .0531132     1.02   0.307    -.0498173    .1584206
+                     pblack |   .1886521    .045753     4.12   0.000     .0989615    .2783427
+                       psex |          0  (omitted)
+                urban_at_14 |   .3746585   .3213301     1.17   0.244     -.255252    1.004569
+                rural_at_14 |   .4640434   .3233112     1.44   0.151    -.1697508    1.097838
+                 farm_at_14 |   .5515637   .3287783     1.68   0.093    -.0929477    1.196075
+age_stopped_living_w_parent |  -.0331105   .0059377    -5.58   0.000    -.0447504   -.0214706
+                            |
+         reside_parent_type |
+                         1  |   .6583464   .0579508    11.36   0.000     .5447442    .7719486
+                         2  |   .1045451   .0692624     1.51   0.131    -.0312316    .2403218
+                         3  |    .663637   .2353516     2.82   0.005     .2022721    1.125002
+                            |
+           mother_work_1978 |  -.0657054   .0196741    -3.34   0.001    -.1042729   -.0271379
+           father_work_1978 |  -.0344284   .0270609    -1.27   0.203    -.0874764    .0186196
+         cultural_influence |    .662114   .0601207    11.01   0.000      .544258      .77997
+                   teen_mom |  -.3742718   .0425155    -8.80   0.000     -.457616   -.2909277
+         foreign_lang_child |   .1016668   .0491998     2.07   0.039     .0052193    .1981143
+                    sibling |  -.0729713   .0086846    -8.40   0.000    -.0899959   -.0559467
+             sibling_school |   .1259655   .0127251     9.90   0.000     .1010203    .1509108
+                      _cons |   3.833674   .3426802    11.19   0.000      3.16191    4.505438
+---------------------------------------------------------------------------------------------
+
+. predict residuals, residual
+(12,647 missing values generated)
+
+. collapse (sd) residuals, by(HGC)
+variable HGC not found
+(error in option by())
+r(111);
+
+. collapse (sd) residuals, by HGC
+option by incorrectly specified
+r(198);
+
+. collapse (sd) residuals, by(hgc)
+
+. graph bar residuals, over(hgc) ytitle("Standard Deviation of Residuals")
+
+. 
+. graph sactter residuals, over(hgc) ytitle("Standard Deviation of Residuals")
+sacttergraph_g.new residuals, over(hgc) ytitle("Standard Deviation of Residuals"): class member function not
+    found
+r(4023);
+
+. graph bar residuals, over(hgc) ///
+option / not allowed
+r(198);
+
+.     blabel(bar, size(medium) format(%9.2f) color(black)) /// 
+command blabel is unrecognized
+r(199);
+
+.     barwidth(0.5) ///
+command barwidth is unrecognized
+r(199);
+
+.     ytitle("Standard Deviation of Residuals", size(medium)) ///
+command ytitle is unrecognized
+r(199);
+
+.     title("Standard Deviation of Residuals by Education Level", size(large)) ///
+command title is unrecognized
+r(199);
+
+.     ylabel(, angle(0)) ///
+command ylabel is unrecognized
+r(199);
+
+.     yline(0, lwidth(medium) lcolor(gray)) ///
+command yline is unrecognized
+r(199);
+
+.     legend(off) ///
+command legend is unrecognized
+r(199);
+
+.     graphregion(color(white))
+command graphregion is unrecognized
+r(199);
+
+. graph bar residuals, over(hgc) ytitle("Standard Deviation of Residuals")
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     xtitle("HGC Category", size(medium)) ///
+>     bar(1, color(green)) ///
+>     blabel(bar, size(medium) format(%9.2f) color(black)) ///
+>     barwidth(0.5) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+xtitle(HGC not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     xtitle("HGC Category", size(medium)) ///
+>     bar(1, color(green)) ///
+>     blabel(bar, size(medium) format(%9.2f) color(black)) ///
+>     barwidth(0.5) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+xtitle(HGC not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     xlabel("HGC Category", size(medium)) ///
+>     bar(1, color(green)) ///
+>     blabel(bar, size(medium) format(%9.2f) color(black)) ///
+>     barwidth(0.5) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+xlabels(HGC not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     xlabel("HGC Category", size(medium)) ///
+>     bar(1, color(green)) ///
+>     blabel(bar, size(medium) format(%9.2f) color(black)) ///
+>     barwidth(0.5) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+xlabels(HGC not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc, label(angle(0))) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     bar(1, color(green)) ///
+>     blabel(bar, size(medium) format(%9.2f) color(black)) ///
+>     barwidth(0.5) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+option barwidth() not allowed
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc, label(angle(0))) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     bar(1, color(green)) ///
+>     blabel(bar, size(medium) format(%9.2f) color(black)) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+
+. 
+end of do-file
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc, label(angle(0))) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     bar(1, color(lightgreen)) ///
+>     blabel(bar, size(medium) format(%9.2f) color(black)) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+(note:  named style lightgreen not found in class color, default attributes used)
+(note:  named style lightgreen not found in class color, default attributes used)
+
+. 
+end of do-file
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc, label(angle(0))) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     bar(1, color(midgreen)) ///
+>     blabel(bar, size(medium) format(%9.2f) color(black)) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+
+. 
+end of do-file
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc, label(angle(0))) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     bar(1, color(midgreen)) ///
+>     blabel(bar, size(medium) format(%6f) color(black)) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+
+. 
+end of do-file
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc, label(angle(0))) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     bar(1, color(midgreen)) ///
+>     blabel(bar, size(small) format(%9.2f) color(black)) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+
+. 
+end of do-file
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc, label(angle(0))) ///
+>     ylabel("Standard Deviation of Residuals", size(medium)) ///
+>         xlabel("HGC category", size(medium)) ///
+>     bar(1, color(midgreen)) ///
+>     blabel(bar, size(small) format(%9.2f) color(black)) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+xlabels(HGC not found
+r(111);
+
+end of do-file
+
+r(111);
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc, label(angle(0))) ///
+>     ylabel("Standard Deviation of Residuals", size(medium)) ///
+>     xlabel(, size(medium)) ///
+>     bar(1, color(midgreen)) ///
+>     blabel(bar, size(small) format(%9.2f) color(black)) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+xlabels(, size(medium)) not allowed, xaxis1 does not exist
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc, label(angle(0))) ///
+>     ylabel("Standard Deviation of Residuals", size(medium)) ///
+>     bar(1, color(midgreen)) ///
+>     blabel(bar, size(small) format(%9.2f) color(black)) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+invalid label specifier, :  "Standard Deviation of Residuals":
+r(198);
+
+end of do-file
+
+r(198);
+
+. do "/var/folders/mq/_l2nmp6s2lv4lstvhswgymv00000gn/T//SD16254.000000"
+
+. graph bar residuals, over(hgc, label(angle(0))) ///
+>     ytitle("Standard Deviation of Residuals", size(medium)) ///
+>     bar(1, color(midgreen)) ///
+>     blabel(bar, size(small) format(%9.2f) color(black)) ///
+>     title("Standard Deviation of Residuals by HGC Category", size(large)) ///
+>     yline(0, lwidth(medium) lcolor(gray)) ///
+>     legend(off) ///
+>     graphregion(color(white))
+
+. 
+end of do-file
+
+. graph save "Graph" "/Users/dcy/Documents/Thesis/graph/Standard Deviation of Residuals by HGC Category.gph"
+file /Users/dcy/Documents/Thesis/graph/Standard Deviation of Residuals by HGC Category.gph saved
+
+. graph use "/Users/dcy/Documents/Thesis/graph/Standard Deviation of Residuals by HGC Category.gph"
+
